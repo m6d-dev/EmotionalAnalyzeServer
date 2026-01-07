@@ -7,8 +7,8 @@ from src.utils.dto import BaseDTO
 
 T = TypeVar("T")
 TModel = TypeVar("TModel", bound=models.Model)
-TQuerySet = TypeVar("TQuerySet", bound=models.QuerySet[TModel])
-TDto = TypeVar("TDto", bound=BaseDTO)
+TQS = TypeVar("TQuerySet", bound=models.QuerySet[TModel])
+TDTO = TypeVar("TDto", bound=BaseDTO)
 
 SingleOrSequence: TypeAlias = Union[T, Sequence[T]]
 

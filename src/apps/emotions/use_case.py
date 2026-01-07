@@ -12,7 +12,9 @@ class AnalyseEmotionUseCase(AbstractUseCase):
     def execute(self, dto: ImageDTO):
         try:
             res = DeepFace.analyze(dto.image, actions=["emotion"])
+            print(res)
         except ValueError as e:
+            print(f"ERROR: {e}")
             raise ValidationError(
                 "Не удалось распознать лицо на изображении. Пожалуйста, загрузите фото с видимым лицом."
             )
